@@ -1,5 +1,7 @@
 # Study Buddy — AZ-900, made clearer
 
+**Live demo:** [https://wanjikuk60.github.io/az900-study-buddy/](https://wanjikuk60.github.io/az900-study-buddy/)
+
 Study Buddy is a welcoming, unofficial study companion for people preparing for Microsoft Azure Fundamentals (AZ-900). It explains cloud topics in plain language, uses careful examples grounded in everyday life in Kenya, offers English, Kiswahili, and beta Sheng answer modes, and provides original practice questions.
 
 ## Try it
@@ -12,7 +14,7 @@ python -m http.server 8000
 
 Then visit <http://localhost:8000>.
 
-The GitHub Pages frontend is static and works without an account or backend. Reviewed topic answers and practice remain available without AI. To enable the optional AI fallback for unmatched questions, deploy the FastAPI backend as described below. Study history is stored in the browser's local storage; use **Reset progress** to clear it.
+The GitHub Pages frontend is static and works without an account or backend. Reviewed topic answers and practice remain available without AI. **Live AI is not currently configured on the public demo**; unmatched questions use the offline fallback. To enable the optional AI fallback for unmatched questions, deploy the FastAPI backend as described below. Study history is stored in the browser's local storage; use **Reset progress** to clear it.
 
 ## What it does
 
