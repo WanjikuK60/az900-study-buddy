@@ -1,36 +1,36 @@
 # Product brief — Study Buddy
 
-## Problem
+## The learner problem
 
-Cloud fundamentals can feel abstract when a learner is just starting out. Terms such as regions, elasticity, and shared responsibility can be easier to remember when they are explained simply and connected to familiar contexts.
+For a new cloud learner, words such as regions, elasticity, and shared responsibility can feel abstract. Dense definitions do not always show what to remember for AZ-900 or how a concept connects to daily life.
 
-## Solution
+## The product
 
-Study Buddy is an unofficial AZ-900 learning companion. It turns a supported question into a concise explanation, an everyday example relevant to learners in Kenya, and a study reminder. Learners can switch explanations to Kiswahili, browse a mapped concept library, and practise with original multiple-choice questions.
+Study Buddy is a friendly, unofficial AZ-900 learning companion. It leads with a reviewed technical definition, adds a familiar Kenyan analogy with caveats, gives an exam reminder and self-check, and provides original practice questions. Learners can select English, Kiswahili, or beta Sheng answers and choose beginner, intermediate, or exam-ready emphasis.
 
 ## Audience
 
-Beginners preparing for Azure Fundamentals, especially learners who value plain language, East African examples, and Kiswahili support.
+Beginners studying for AZ-900, especially learners who benefit from plain language, local examples, and a low-friction study tool that works in a browser without an account.
 
 ## Learning loop
 
-1. Select a topic from one of the published AZ-900 skill domains.
-2. Read a simple explanation and familiar example.
-3. Review a short study reminder.
-4. Answer an original practice question and read its explanation.
-5. Revisit progress stored in the same browser.
+1. Pick one concept from the official exam domains.
+2. Ask Study Buddy or browse its short explanation.
+3. Connect the definition to an everyday example, noting where the analogy stops.
+4. Try an original practice question and review why each distractor is incorrect.
+5. Revisit weaker quiz topics using progress saved on the same device.
 
-## Scope and transparency
+## Scope and honesty
 
-The first build contains 15 reviewed topic notes, English and Kiswahili text, search and filters, a nine-question original quiz, and browser-local progress. It does not use a live AI service and does not transmit learner questions. The content is based on the public Microsoft Learn skills outline. The tool is independent, unofficial, and uses no Microsoft logos or copied exam items.
+The current build includes 15 reviewed concept notes, English/Kiswahili/beta Sheng answer text, three learner levels, topic search and filtering, 15 original questions, distractor explanations, and local weak-topic tracking. It does not use a live AI model; topic matching keeps this prototype predictable and private. The AI prompt file describes how a future server-side tutor can be grounded and clearly disclosed.
 
 ## Success signals
 
-- A learner can discover a topic through search, a domain filter, a suggestion, or a topic card.
-- A supported answer contains a definition, a contextual example, and a study reminder.
-- A learner can practise and understand the reason behind an answer.
-- Content stays traceable to Microsoft's public outline while remaining clearly unofficial.
+- Learners can reach a concept through search, a topic card, or a suggested question.
+- Each supported answer leads with a technical definition and clearly labels the analogy, exam reminder, and a related self-check.
+- Learners can practise, understand wrong choices, and revisit weak topics without signing in.
+- The content remains traceable to the current Microsoft Learn exam objectives.
 
 ## Next steps
 
-Review the explanations and Kiswahili terminology with learners and an Azure reviewer. Expand the original question set. Consider a server-side, source-grounded AI integration only after privacy, reliability, and answer-review safeguards are in place.
+Review the content with learners, an Azure subject-matter reviewer, and fluent Kiswahili/Sheng speakers; then consider a server-side AI service grounded in versioned Microsoft Learn sources.

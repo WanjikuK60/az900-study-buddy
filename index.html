@@ -3,115 +3,197 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#123b35" />
-    <meta name="description" content="An unofficial AZ-900 study companion with plain-language cloud explanations, Kenyan examples, Kiswahili support, and original practice questions." />
-    <title>Study Buddy | AZ-900, made clearer</title>
+    <meta name="theme-color" content="#102c2a" />
+    <meta name="description" content="Study Azure fundamentals with clear explanations, Kenyan examples, Kiswahili support, and AZ-900 practice." />
+    <title>Study Buddy — AZ-900, made clearer</title>
     <link rel="stylesheet" href="styles.css?v=2" />
     <script src="app.js?v=2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to study tools</a>
     <header class="site-header">
-      <a class="brand" href="#home" aria-label="Study Buddy home"><span class="brand-mark" aria-hidden="true">✳</span><span>study<span>buddy</span></span></a>
-      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><i></i><i></i><i></i></button>
+      <a class="brand" href="#home" aria-label="Study Buddy home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>study<span class="brand-accent">buddy</span></span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#home">Home</a><a href="#buddy">Study Buddy</a><a href="#topics">Study topics</a><a href="#practice">Practice</a>
+        <a href="#home">Home</a>
+        <a href="#buddy">Study Buddy</a>
+        <a href="#topics">Study topics</a>
+        <a href="#practice">Practice</a>
       </nav>
       <div class="header-actions">
-        <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch to Kiswahili"><span aria-hidden="true">◎</span><span id="language-label">English</span></button>
-        <button class="reset-button" id="reset-progress" type="button" aria-label="Reset study progress" title="Reset study progress">↻</button>
+        <label class="control-label" for="language-select"><span class="sr-only">Answer language</span>
+          <select id="language-select" aria-label="Answer language">
+            <option value="en">English</option>
+            <option value="sw">Kiswahili</option>
+            <option value="sheng">Sheng (beta)</option>
+          </select>
+        </label>
+        <button class="reset-button" id="reset-progress" type="button">Reset progress</button>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero page-width" id="home">
+      <section class="hero page-width" id="home" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow"><span></span> AZURE FUNDAMENTALS · AZ-900</p>
-          <h1>Cloud concepts,<br /><em>closer to home.</em></h1>
-          <p class="hero-lede">Make Azure make sense. Learn in plain language, connect ideas to everyday life in Kenya, and practise what you understand.</p>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> AZURE FUNDAMENTALS · AZ-900</p>
+          <h1 id="hero-title">Cloud concepts,<br /><span>closer to home.</span></h1>
+          <p class="hero-intro">Make Azure make sense. Learn in plain language, connect ideas to everyday life in Kenya, and practise what the exam can ask.</p>
           <div class="hero-actions">
-            <a class="button button-gold" href="#buddy">Ask Study Buddy <span aria-hidden="true">↗</span></a>
-            <a class="button button-outline" href="#practice">Try a quick quiz</a>
+            <a class="button button-primary" href="#buddy">Ask Study Buddy <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="#practice">Try a quick quiz</a>
           </div>
-          <ul class="hero-points"><li>✓ Beginner-friendly</li><li>✓ Kiswahili support</li><li>✓ Private, local progress</li></ul>
+          <ul class="trust-points" aria-label="Study Buddy features">
+            <li><span aria-hidden="true">✓</span> Beginner-friendly</li>
+            <li><span aria-hidden="true">✓</span> Kiswahili support</li>
+            <li><span aria-hidden="true">✓</span> Progress saved here</li>
+          </ul>
         </div>
-        <aside class="hero-note" aria-label="Learning progress">
-          <div class="note-kicker"><span aria-hidden="true">✦</span> YOUR LEARNING PATH</div>
+        <aside class="hero-note" aria-label="Your learning plan">
+          <div class="note-top"><span class="note-icon" aria-hidden="true">✳</span><span>YOUR NEXT STEP</span></div>
           <p>Small steps.<br /><strong>Real cloud confidence.</strong></p>
-          <div class="note-rule"></div>
-          <div class="note-progress-label"><span>Topics explored</span><strong id="topic-progress-label">0 / 15</strong></div>
-          <div class="progress-track"><span id="topic-progress-fill"></span></div>
+          <div class="note-divider"></div>
+          <div class="note-stat"><span>Topics explored</span><strong id="hero-topics-count">0 / 15</strong></div>
+          <div class="note-progress" aria-hidden="true"><span id="hero-progress-fill"></span></div>
           <a href="#topics">Choose a topic <span aria-hidden="true">→</span></a>
+          <span class="note-orbit orbit-a" aria-hidden="true"></span>
+          <span class="note-orbit orbit-b" aria-hidden="true"></span>
         </aside>
-        <div class="hero-decoration hero-decoration-one" aria-hidden="true"></div>
-        <div class="hero-decoration hero-decoration-two" aria-hidden="true"></div>
       </section>
 
-      <section class="domains page-width" aria-label="AZ-900 official skills outline domains">
-        <article><span class="domain-index">01</span><div><strong>Cloud concepts</strong><small>25–30% of the exam</small><i><b style="width:28%"></b></i></div></article>
-        <article><span class="domain-index">02</span><div><strong>Azure architecture &amp; services</strong><small>35–40% of the exam</small><i><b style="width:38%"></b></i></div></article>
-        <article><span class="domain-index">03</span><div><strong>Management &amp; governance</strong><small>30–35% of the exam</small><i><b style="width:33%"></b></i></div></article>
-        <p>Based on Microsoft's public AZ-900 skills outline · skills measured July 20, 2026</p>
+      <section class="domain-strip page-width" aria-label="AZ-900 exam domains">
+        <article class="domain-item">
+          <span class="domain-number">01</span>
+          <div><strong>Cloud concepts</strong><span>25–30% of the exam</span></div>
+          <div class="domain-meter"><i style="width: 28%"></i></div>
+        </article>
+        <article class="domain-item">
+          <span class="domain-number">02</span>
+          <div><strong>Azure architecture &amp; services</strong><span>35–40% of the exam</span></div>
+          <div class="domain-meter"><i style="width: 38%"></i></div>
+        </article>
+        <article class="domain-item">
+          <span class="domain-number">03</span>
+          <div><strong>Management &amp; governance</strong><span>30–35% of the exam</span></div>
+          <div class="domain-meter"><i style="width: 33%"></i></div>
+        </article>
+        <p class="domain-source">Exam skills outline · Microsoft Learn, July 2026</p>
       </section>
 
-      <section class="section page-width" id="buddy">
+      <section class="learning-section page-width" id="buddy" aria-labelledby="buddy-title">
         <div class="section-heading">
-          <div><p class="eyebrow eyebrow-dark">YOUR FRIENDLY CLOUD COMPANION</p><h2>Ask a question.<br />Get a clearer picture.</h2><p class="section-lede">Start with what you know. Connect Azure ideas to familiar situations.</p></div>
-          <span class="ready-badge"><i></i> READY WHEN YOU ARE</span>
+          <div>
+            <p class="eyebrow">YOUR FRIENDLY CLOUD COMPANION</p>
+            <h2 id="buddy-title">Ask a question. Get a clearer picture.</h2>
+            <p class="section-lede">Choose a supported concept. Study Buddy starts with the real definition, then adds a familiar example and an exam reminder.</p>
+          </div>
+          <div class="buddy-settings">
+            <span class="section-counter"><span class="pulse-dot"></span> READY WHEN YOU ARE</span>
+            <label class="level-control" for="learner-level"><span>Study level</span>
+              <select id="learner-level" aria-label="Learning level">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="exam">Exam-ready</option>
+              </select>
+            </label>
+          </div>
         </div>
         <div class="buddy-layout">
-          <section class="chat-card" aria-label="Study Buddy chat">
-            <div class="chat-header"><span class="buddy-avatar" aria-hidden="true">✳</span><div><strong>Study Buddy</strong><small>AZ-900 learning companion</small></div><span class="chat-language" id="chat-language">English</span></div>
+          <div class="chat-panel">
+            <div class="chat-topline"><span class="buddy-avatar" aria-hidden="true">✳</span><div><strong>Study Buddy</strong><span>15 reviewed concepts · no live AI</span></div><span class="chat-language" id="chat-language">English</span></div>
+            <p class="level-hint" id="level-hint">Beginner mode · clear definitions, familiar examples, and a quick exam reminder.</p>
             <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions text">
-              <div class="chat-welcome"><span aria-hidden="true">✦</span><p>Jambo! What cloud concept would you like to understand today?</p></div>
+              <div class="chat-welcome"><span class="welcome-spark" aria-hidden="true">✦</span><p>Jambo! I can help make Azure concepts easier to picture. What are you curious about?</p></div>
             </div>
-            <div class="suggestions" aria-label="Suggested questions">
+            <div class="suggested-questions" aria-label="Try asking">
               <button type="button" data-question="What is cloud computing?">What is cloud computing?</button>
               <button type="button" data-question="Explain Azure regions and availability zones">Regions vs. zones</button>
               <button type="button" data-question="What is the difference between IaaS, PaaS, and SaaS?">IaaS, PaaS &amp; SaaS</button>
             </div>
-            <form class="ask-form" id="ask-form"><label class="sr-only" for="question-input">Ask about an AZ-900 topic</label><input id="question-input" name="question" type="text" maxlength="180" placeholder="Ask about an AZ-900 concept…" autocomplete="off" required /><button type="submit">Ask Buddy <span aria-hidden="true">↑</span></button></form>
-            <p class="privacy-note">ⓘ Reviewed study notes · Questions stay in this browser</p>
-          </section>
-          <aside class="buddy-aside">
-            <article class="aside-card aside-green"><span aria-hidden="true">↗</span><small>PLAIN-LANGUAGE EXPLANATIONS</small><h3>Big ideas,<br />everyday words.</h3><p>A friendly place to start—plus a useful exam reminder.</p></article>
-            <article class="aside-card aside-cream"><span aria-hidden="true">⌂</span><small>EXAMPLES THAT FEEL FAMILIAR</small><h3>Azure, in context.</h3><p>Connect cloud ideas to a matatu route, a local shop, or family photos.</p></article>
+            <form class="ask-form" id="ask-form">
+              <label class="sr-only" for="question-input">Ask about an AZ-900 topic</label>
+              <input id="question-input" name="question" type="text" maxlength="180" placeholder="Ask about an AZ-900 topic…" autocomplete="off" required />
+              <button class="send-button" type="submit">Ask Buddy <span aria-hidden="true">↑</span></button>
+            </form>
+            <p class="privacy-note"><span aria-hidden="true">ⓘ</span> Answers use reviewed study notes. Your questions stay in this browser.</p>
+          </div>
+          <aside class="buddy-side">
+            <div class="side-card side-card-green">
+              <span class="side-icon" aria-hidden="true">↗</span>
+              <p class="side-kicker">A SIMPLE EXPLANATION</p>
+              <h3>Big ideas,<br />everyday words.</h3>
+              <p>No jargon wall. Just a friendly starting point and a useful exam reminder.</p>
+            </div>
+            <div class="side-card side-card-cream">
+              <span class="side-icon" aria-hidden="true">⌂</span>
+              <p class="side-kicker">FROM HERE, WITH CONTEXT</p>
+              <h3>Examples that feel familiar.</h3>
+              <p>Connect cloud concepts to a matatu route, a local shop, or keeping a family photo safe.</p>
+            </div>
           </aside>
         </div>
       </section>
 
-      <section class="section page-width" id="topics">
+      <section class="topics-section page-width" id="topics" aria-labelledby="topics-title">
         <div class="section-heading topics-heading">
-          <div><p class="eyebrow eyebrow-dark">FOLLOW THE PUBLIC EXAM OUTLINE</p><h2>Build your Azure foundations</h2><p class="section-lede">Explore 15 original study notes across all three AZ-900 skill areas.</p></div>
-          <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Search topics</span><input id="topic-search" type="search" placeholder="Find a concept" /></label>
+          <div>
+            <p class="eyebrow">FOLLOW THE OFFICIAL EXAM OUTLINE</p>
+            <h2 id="topics-title">Build your Azure foundations</h2>
+            <p class="section-lede">Explore 15 bite-sized topics across all three AZ-900 skill areas.</p>
+          </div>
+          <label class="topic-search"><span aria-hidden="true">⌕</span><span class="sr-only">Search topics</span><input type="search" id="topic-search" placeholder="Find a concept" /></label>
         </div>
         <div class="filter-row" role="group" aria-label="Filter topics by exam domain">
-          <button type="button" class="filter-button active" data-filter="all" aria-pressed="true">All topics <span>15</span></button>
-          <button type="button" class="filter-button" data-filter="cloud" aria-pressed="false">Cloud concepts</button>
-          <button type="button" class="filter-button" data-filter="architecture" aria-pressed="false">Architecture &amp; services</button>
-          <button type="button" class="filter-button" data-filter="governance" aria-pressed="false">Management &amp; governance</button>
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All topics <span id="all-topic-count">15</span></button>
+          <button class="filter-button" type="button" data-filter="cloud" aria-pressed="false">Cloud concepts</button>
+          <button class="filter-button" type="button" data-filter="architecture" aria-pressed="false">Architecture &amp; services</button>
+          <button class="filter-button" type="button" data-filter="governance" aria-pressed="false">Management &amp; governance</button>
         </div>
         <div class="topic-grid" id="topic-grid" aria-live="polite"></div>
         <p class="empty-state" id="empty-state" hidden>No matching concepts. Try another search.</p>
       </section>
 
-      <section class="quiz-section page-width" id="practice">
-        <div class="quiz-intro"><p class="eyebrow eyebrow-dark">A QUICK CHECK-IN</p><h2>Ready to test your understanding?</h2><p>Try original practice questions. Learn from each answer, right or wrong.</p><div class="score-chip"><span aria-hidden="true">✓</span><div><strong id="quiz-score">0 correct</strong><small id="quiz-answered">No questions answered yet</small></div></div></div>
-        <section class="quiz-card" aria-label="Original AZ-900 practice quiz">
-          <div class="quiz-meta"><strong>✳ AZ-900 ORIGINAL PRACTICE</strong><span id="question-number">QUESTION 1 OF 9</span></div>
-          <div class="quiz-progress"><span id="quiz-progress-fill"></span></div>
+      <section class="quiz-section page-width" id="practice" aria-labelledby="quiz-title">
+        <div class="quiz-intro">
+          <p class="eyebrow">A QUICK CHECK-IN</p>
+          <h2 id="quiz-title">Ready to test your understanding?</h2>
+          <p>Try a short practice set. Learn from each answer, whether you get it right or not.</p>
+          <div class="quiz-progress-summary"><span class="quiz-summary-icon" aria-hidden="true">✓</span><span><strong id="quiz-score">0 correct</strong><small id="quiz-answered">No questions answered yet</small></span></div>
+        </div>
+        <div class="quiz-card">
+          <div class="quiz-card-top"><span class="quiz-label"><span aria-hidden="true">✳</span> AZ-900 PRACTICE</span><span id="question-number">QUESTION 1 OF 9</span></div>
+          <div class="quiz-progress"><span id="quiz-progress"></span></div>
           <div id="quiz-content"></div>
-          <div class="quiz-controls"><span id="answer-feedback" role="status" aria-live="polite"></span><button id="next-question" type="button" disabled>Next question <span aria-hidden="true">→</span></button></div>
-        </section>
+          <div class="quiz-controls"><span id="answer-feedback" role="status" aria-live="polite"></span><button type="button" id="next-question" class="next-button" disabled>Next question <span aria-hidden="true">→</span></button></div>
+        </div>
       </section>
 
-      <aside class="disclosure page-width"><span aria-hidden="true">i</span><p><strong>Independent and unofficial.</strong> Study Buddy is not affiliated with or endorsed by Microsoft. Practice questions are original, written for this project—not copied from an exam. Objectives may change: <a href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900" target="_blank" rel="noopener noreferrer">check the current Microsoft Learn AZ-900 skills outline</a>.</p></aside>
+      <section class="weak-section page-width" aria-labelledby="weak-title">
+        <div class="weak-heading">
+          <div>
+            <p class="eyebrow">YOUR REVISION PLAN</p>
+            <h2 id="weak-title">Topics to revisit</h2>
+            <p class="section-lede">Based on your quiz answers, saved only in this browser.</p>
+          </div>
+          <a class="view-all-link" href="#practice">Review practice <span aria-hidden="true">→</span></a>
+        </div>
+        <div id="weak-topics" class="weak-topics" aria-live="polite"></div>
+      </section>
+
+      <section class="source-note page-width">
+        <span class="source-mark" aria-hidden="true">i</span>
+        <p><strong>Built for learning, grounded in Microsoft Learn.</strong> This is an independent, unofficial study aid; its practice questions are original and its examples are memory aids, not exact technical matches. Exam objectives can change; check the <a href="https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-900" target="_blank" rel="noopener noreferrer">current AZ-900 study guide</a> before your exam.</p>
+      </section>
     </main>
 
     <footer class="site-footer page-width">
-      <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">✳</span><span>study<span>buddy</span></span></a>
+      <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">✳</span><span>study<span class="brand-accent">buddy</span></span></a>
       <span>Made with curiosity for Africa’s next generation of cloud builders.</span>
-      <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/" target="_blank" rel="noopener noreferrer">Explore Azure Fundamentals ↗</a>
+      <a href="https://learn.microsoft.com/credentials/certifications/azure-fundamentals/" target="_blank" rel="noopener noreferrer">Explore Azure Fundamentals ↗</a>
     </footer>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </body>

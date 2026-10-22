@@ -1,15 +1,14 @@
 # Study Buddy — 90-second demo
 
-1. **Start on the landing page (10 sec).** Point out the three AZ-900 domains and their published weight ranges.
-2. **Ask a question (20 sec).** Choose “What is cloud computing?” Show the explanation, Kenyan everyday example, and AZ-900 reminder.
-3. **Switch to Kiswahili (10 sec).** Toggle the answer language and explore a supported concept.
-4. **Explore a topic (15 sec).** Search or filter the library, then open a topic card.
-5. **Try the practice quiz (25 sec).** Pick an answer, read the feedback, and advance.
-6. **Close with the safeguards (10 sec).** Explain that the quiz items are original, the tool is unofficial, and the prototype uses local notes rather than live AI.
+1. **Open the landing page (10 sec).** Point out that Study Buddy follows all three AZ-900 exam domains.
+2. **Ask a question (20 sec).** Click “What is cloud computing?” Show the technical definition first, then the local analogy, AZ-900 reminder, and related self-check.
+3. **Switch language (10 sec).** Choose Kiswahili or Sheng (beta), then compare the answer and select beginner, intermediate, or exam-ready emphasis.
+4. **Explore a topic (15 sec).** Search or filter the library, then ask about one topic from its card.
+5. **Try the quiz (25 sec).** Choose an answer, open the distractor explanations, and move to the next question. After a wrong answer, point out the topic in the local review list.
+6. **Close honestly (10 sec).** Explain that this prototype uses reviewed local notes, original practice questions, saves progress in the current browser, and does not call a live AI service. Sheng is a beta draft for community review.
 
-## Before presenting
+## If something goes wrong
 
-- Check the [current Microsoft Learn AZ-900 skills outline](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900).
-- The app has no live AI. If a question is not matched, choose a suggested prompt or a topic card.
-- Progress is stored in this browser; use **Reset progress** if you want a clean demo.
-- The demo and learning aid are independent of Microsoft and use no Microsoft logos or copied exam questions.
+- If an unfamiliar question does not match, choose a suggested question or a concept card.
+- If saved progress is unexpected, use **Reset progress**; this clears only this browser's Study Buddy data.
+- Keep the Microsoft Learn AZ-900 study guide open for questions about current exam objectives.
