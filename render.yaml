@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: az900-study-buddy-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ANTHROPIC_MODEL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://wanjikuk60.github.io,http://localhost:8000,http://127.0.0.1:8000

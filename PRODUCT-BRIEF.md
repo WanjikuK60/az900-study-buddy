@@ -22,7 +22,7 @@ Beginners studying for AZ-900, especially learners who benefit from plain langua
 
 ## Scope and honesty
 
-The current build includes 15 reviewed concept notes, English/Kiswahili/beta Sheng answer text, three learner levels, topic search and filtering, 15 original questions, distractor explanations, and local weak-topic tracking. It does not use a live AI model; topic matching keeps this prototype predictable and private. The AI prompt file describes how a future server-side tutor can be grounded and clearly disclosed.
+The current build includes 15 reviewed concept notes, English/Kiswahili/beta Sheng answer text, three learner levels, topic search and filtering, 15 original questions, distractor explanations, and local weak-topic tracking. Supported concepts are answered from reviewed notes first. When deployed and configured, unmatched questions can use a server-side Anthropic-backed FastAPI service. Those answers are labeled AI-generated and should be checked against Microsoft Learn; the current fallback is not retrieval-grounded. Without the backend URL, the static study tools remain available.
 
 ## Success signals
 
@@ -33,4 +33,4 @@ The current build includes 15 reviewed concept notes, English/Kiswahili/beta She
 
 ## Next steps
 
-Review the content with learners, an Azure subject-matter reviewer, and fluent Kiswahili/Sheng speakers; then consider a server-side AI service grounded in versioned Microsoft Learn sources.
+Review the content with learners, an Azure subject-matter reviewer, and fluent Kiswahili/Sheng speakers. Improve the AI fallback with versioned Microsoft Learn retrieval and stronger production rate limiting before broad public use.

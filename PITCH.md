@@ -6,9 +6,9 @@
 
 ## 2. Product (about 60 seconds)
 
-“Meet Study Buddy, a simple AZ-900 study companion. Choose a topic or ask a question. Study Buddy gives a plain-language explanation, an everyday example that feels familiar to learners in Kenya, and an exam reminder. Learners can switch the answer to Kiswahili, explore the public exam domains, and try original practice questions with explanations.”
+“Meet Study Buddy, a simple AZ-900 study companion. It checks 15 reviewed concepts first, giving a plain-language definition, a familiar Kenyan example, and an exam reminder. When the optional backend is configured, questions beyond those notes go to a live AI tutor. That answer is clearly labeled AI-generated and points learners back to Microsoft Learn to verify. Learners can also switch languages and practise with original questions.”
 
-**Demo:** Ask about cloud computing, switch to Kiswahili, find an Azure topic, and answer an original practice question.
+**Demo:** Ask about a reviewed topic, then an unmatched AZ-900 concept to demonstrate the optional AI fallback. Switch language and answer an original practice question.
 
 ## 3. Target learners (about 25 seconds)
 
@@ -16,12 +16,16 @@
 
 ## 4. Impact and scale (about 35 seconds)
 
-“The study path follows Microsoft's public AZ-900 skills outline, so learners can see what to study next. The same pattern—simple explanation, contextual example, practice, and reviewed sources—could support other entry-level certifications after careful content review.”
+“The study path follows Microsoft's three AZ-900 domains, so it is easy to see what to study next. The same pattern—simple explanation, contextual example, practice, and reviewed sources—could support other entry-level certifications after careful content review.”
 
 ## 5. Responsible build (about 30 seconds)
 
-“This prototype uses reviewed notes and topic matching; it does not pretend to be a live AI service or send questions to a model. Its practice questions are original, not copied exam items. Study Buddy is an independent, unofficial learning aid and does not use Microsoft logos. The future AI plan keeps keys on a server and grounds answers in reviewed sources.”
+“The website still works when the backend is unavailable. The optional FastAPI service keeps the Anthropic key server-side, limits requests, and labels generated answers. The current prompt is scoped to AZ-900 but does not retrieve source passages, so we tell learners to verify with Microsoft Learn instead of claiming the model is always right.”
 
 ## Close
 
 “Study Buddy turns one learner's questions into a clearer starting point for the next cloud builder. Thank you.”
+
+## Deployment and language-review note
+
+Do not claim that the live AI demo is active until the Render service is configured with a provider key and model and `config.js` points to its tested URL. Kiswahili and Sheng content still needs review by fluent speakers; Sheng is marked beta.

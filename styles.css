@@ -125,6 +125,9 @@ h2 { color: var(--ink); font-size: clamp(24px, 3vw, 31px); letter-spacing: -1.3p
 .buddy-message { max-width: 100%; }
 .message-avatar { height: 27px; width: 27px; font-size: 13px; }
 .message-bubble { background: #f4f7f2; border-radius: 4px 12px 12px 12px; color: #4f6159; font-size: 11px; line-height: 1.6; padding: 10px 13px; }
+.ai-answer { flex: 1; min-width: 0; }
+.ai-generated-label { color: var(--green); display: block; font-size: 8px; letter-spacing: .35px; margin-bottom: 6px; }
+.ai-answer-text { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
 .answer-card { background: #f4f7f2; border-radius: 4px 12px 12px 12px; color: #4c5e55; flex: 1; min-width: 0; padding: 12px 15px; }
 .answer-card h3 { color: var(--green-dark); font-size: 13px; letter-spacing: -.2px; margin: 0 0 12px; }
 .answer-section + .answer-section { border-top: 1px solid #e4eae2; margin-top: 10px; padding-top: 9px; }

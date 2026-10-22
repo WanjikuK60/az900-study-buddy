@@ -465,6 +465,12 @@ const copy = {
     },
     askPlaceholder: "Ask about an AZ-900 topic…",
     askButton: "Ask Buddy",
+    capabilityConnected: "15 reviewed concepts · AI fallback configured",
+    capabilityOffline: "15 reviewed concepts · AI fallback not configured",
+    privacyNotice: "Reviewed notes answer supported concepts first. If configured, unmatched questions plus your selected language and study level are sent to the Study Buddy server and Anthropic. AI-generated answers may be wrong; verify them on Microsoft Learn. Don’t enter personal or confidential information.",
+    aiLabel: "AI-generated · verify on Microsoft Learn",
+    aiLoading: "Checking the AI tutor…",
+    aiError: "The AI tutor is unavailable right now. Try one of the reviewed AZ-900 topics.",
     welcome: "Jambo! I can help make Azure concepts easier to picture. What are you curious about?",
     notFound: "I don’t have a reviewed note for that wording yet. Try one of these AZ-900 topics, or choose a card in the study library.",
     explanation: "In simple terms",
@@ -514,6 +520,12 @@ const copy = {
     },
     askPlaceholder: "Uliza kuhusu mada ya AZ-900…",
     askButton: "Uliza Buddy",
+    capabilityConnected: "Dhana 15 zilizokaguliwa · AI imewekwa",
+    capabilityOffline: "Dhana 15 zilizokaguliwa · AI haijawekwa",
+    privacyNotice: "Dokezo zilizokaguliwa hujibu dhana zinazoungwa mkono kwanza. AI ikiwa imewekwa, maswali yasiyolingana pamoja na lugha na kiwango cha masomo ulichoweka hutumwa kwa seva ya Study Buddy na Anthropic. Majibu ya AI yanaweza kuwa na makosa; yathibitishe kwenye Microsoft Learn. Usiweke taarifa binafsi au za siri.",
+    aiLabel: "Jibu limetengenezwa na AI · thibitisha kwenye Microsoft Learn",
+    aiLoading: "Inauliza mwalimu wa AI…",
+    aiError: "Mwalimu wa AI hapatikani sasa. Jaribu mada ya AZ-900 iliyokaguliwa.",
     welcome: "Jambo! Ninaweza kusaidia kufanya dhana za Azure ziwe rahisi kuelewa. Ungependa kujua nini?",
     notFound: "Bado sina dokezo lililokaguliwa kwa swali hilo. Jaribu mada hizi za AZ-900 au chagua kadi kwenye maktaba ya masomo.",
     explanation: "Kwa maneno rahisi",
@@ -563,6 +575,12 @@ const copy = {
     },
     askPlaceholder: "Uliza kuhusu AZ-900…",
     askButton: "Uliza Buddy",
+    capabilityConnected: "Dhana 15 zimecheckiwa · AI imewekwa",
+    capabilityOffline: "Dhana 15 zimecheckiwa · AI haijawekwa",
+    privacyNotice: "Notes zilizokaguliwa hujibu concepts zinazojulikana kwanza. AI ikiwa imewekwa, maswali zingine plus language na study level uliyochagua hutumwa kwa server ya Study Buddy na Anthropic. Majibu ya AI zinaweza kuwa wrong; verify kwa Microsoft Learn. Usiweke personal ama confidential info.",
+    aiLabel: "AI-generated · verify kwa Microsoft Learn",
+    aiLoading: "Nacheki na AI tutor…",
+    aiError: "AI tutor haipatikani sai. Jaribu topic ya AZ-900 imecheckiwa.",
     welcome: "Niaje! Naweza kusaidia concepts za Azure zikae clear. Unataka kujua gani?",
     notFound: "Sina note verified ya hilo bado. Jaribu topic ya AZ-900 au uchague card kwa library.",
     explanation: "Maana yake",
@@ -599,10 +617,15 @@ const copy = {
 };
 
 const storageKey = "studybuddy-az900-v1";
+const apiBaseUrl = typeof window.STUDY_BUDDY_API_URL === "string"
+  ? window.STUDY_BUDDY_API_URL.trim().replace(/\/+$/, "")
+  : "";
 const dom = {
   languageSelect: document.querySelector("#language-select"),
   levelSelect: document.querySelector("#learner-level"),
   chatLanguage: document.querySelector("#chat-language"),
+  capability: document.querySelector("#buddy-capability"),
+  privacyNote: document.querySelector("#privacy-note"),
   askForm: document.querySelector("#ask-form"),
   questionInput: document.querySelector("#question-input"),
   chatLog: document.querySelector("#chat-log"),
@@ -652,6 +675,8 @@ const state = {
   filter: "all",
   search: "",
   lastQuestion: "",
+  lastAnswer: null,
+  answerRequestId: 0,
   quizIndex: 0,
   quizSelection: null,
   quizComplete: false,
@@ -867,34 +892,110 @@ function answerQuestion(question) {
   const trimmed = question.trim();
   if (!trimmed) return;
   state.lastQuestion = trimmed;
+  state.lastAnswer = null;
+  const requestId = ++state.answerRequestId;
   state.simpleMode = false;
   state.simpleModeTopic = null;
   appendChatMessage("learner-message", trimmed);
   const topic = findTopic(trimmed);
-  if (!topic) {
-    const notFound = appendChatMessage("buddy-message", currentCopy().notFound);
-    notFound.dataset.notFound = "true";
+  if (topic) {
+    state.lastAnswer = { type: "topic", topicId: topic.id };
+    state.viewed.add(topic.id);
+    renderLastAnswer();
+    updateProgress();
+    renderTopics();
+    persistProgress();
     return;
   }
-  state.viewed.add(topic.id);
+
+  if (!apiBaseUrl) {
+    state.lastAnswer = { type: "not-found" };
+    renderLastAnswer();
+    return;
+  }
+
+  state.lastAnswer = { type: "loading" };
   renderLastAnswer();
-  updateProgress();
-  renderTopics();
-  persistProgress();
+  fetch(`${apiBaseUrl}/chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      question: trimmed,
+      language: state.language,
+      level: state.level
+    })
+  })
+    .then(async response => {
+      let payload;
+      try {
+        payload = await response.json();
+      } catch (error) {
+        if (error instanceof SyntaxError) {
+          throw new Error("The AI service returned an unreadable response.");
+        }
+        throw error;
+      }
+      if (!response.ok) {
+        throw new Error(typeof payload.detail === "string" ? payload.detail : currentCopy().aiError);
+      }
+      if (typeof payload.answer !== "string" || !payload.answer.trim()) {
+        throw new Error("The AI service returned an empty answer.");
+      }
+      if (requestId === state.answerRequestId) {
+        state.lastAnswer = { type: "ai", answer: payload.answer.trim() };
+      }
+    })
+    .catch(error => {
+      const message = error instanceof TypeError
+        ? currentCopy().aiError
+        : error.message || currentCopy().aiError;
+      if (requestId === state.answerRequestId) {
+        state.lastAnswer = { type: "error", message };
+      }
+    })
+    .finally(() => {
+      if (requestId === state.answerRequestId) renderLastAnswer();
+    });
 }
 
 function renderLastAnswer() {
-  dom.chatLog.querySelectorAll(".buddy-message[data-answer-for], .buddy-message[data-not-found]").forEach(message => message.remove());
-  const topic = findTopic(state.lastQuestion);
-  if (!topic) {
+  dom.chatLog.querySelectorAll(
+    ".buddy-message[data-answer-for], .buddy-message[data-not-found], .buddy-message[data-ai-answer], .buddy-message[data-ai-error], .buddy-message[data-ai-loading]"
+  ).forEach(message => message.remove());
+  if (!state.lastAnswer) return;
+  if (state.lastAnswer.type === "topic") {
+    const topic = topics.find(item => item.id === state.lastAnswer.topicId);
+    if (!topic) return;
+    const wrapper = makeElement("div", "chat-message buddy-message");
+    wrapper.dataset.answerFor = topic.id;
+    wrapper.append(makeElement("span", "message-avatar", "✳"));
+    wrapper.append(createAnswerBlock(topic));
+    dom.chatLog.append(wrapper);
+    dom.chatLog.scrollTop = dom.chatLog.scrollHeight;
+    return;
+  }
+  if (state.lastAnswer.type === "not-found") {
     const notFound = appendChatMessage("buddy-message", currentCopy().notFound);
     notFound.dataset.notFound = "true";
     return;
   }
   const wrapper = makeElement("div", "chat-message buddy-message");
-  wrapper.dataset.answerFor = topic.id;
+  wrapper.dataset.aiAnswer = "true";
   wrapper.append(makeElement("span", "message-avatar", "✳"));
-  wrapper.append(createAnswerBlock(topic));
+  const bubble = makeElement("div", "message-bubble ai-answer");
+  if (state.lastAnswer.type === "loading") {
+    wrapper.dataset.aiLoading = "true";
+    bubble.textContent = currentCopy().aiLoading;
+  } else if (state.lastAnswer.type === "error") {
+    wrapper.dataset.aiError = "true";
+    bubble.append(makeElement("p", "ai-answer-text", state.lastAnswer.message));
+  } else {
+    bubble.append(
+      makeElement("strong", "ai-generated-label", currentCopy().aiLabel),
+      makeElement("p", "ai-answer-text", state.lastAnswer.answer)
+    );
+  }
+  wrapper.append(bubble);
   dom.chatLog.append(wrapper);
   dom.chatLog.scrollTop = dom.chatLog.scrollHeight;
 }
@@ -907,6 +1008,9 @@ function applyLanguage() {
   dom.questionInput.placeholder = text.askPlaceholder;
   dom.askForm.querySelector("button").firstChild.textContent = `${text.askButton} `;
   dom.chatLanguage.textContent = text.language;
+  dom.capability.textContent = apiBaseUrl ? text.capabilityConnected : text.capabilityOffline;
+  const privacyIcon = dom.privacyNote.querySelector("span");
+  dom.privacyNote.replaceChildren(privacyIcon, document.createTextNode(text.privacyNotice));
   document.querySelector("#level-hint").textContent = text.levelHint[state.level];
   dom.emptyState.textContent = text.noResults;
   document.querySelector("#next-question").firstChild.textContent = `${state.quizComplete ? text.restart : state.quizIndex === questions.length - 1 ? text.finish : text.next} `;
@@ -1102,6 +1206,8 @@ document.querySelector("#reset-progress").addEventListener("click", () => {
   state.quizSelection = null;
   state.quizComplete = false;
   state.lastQuestion = "";
+  state.lastAnswer = null;
+  state.answerRequestId += 1;
   state.simpleMode = false;
   state.simpleModeTopic = null;
   const welcome = makeElement("div", "chat-welcome");

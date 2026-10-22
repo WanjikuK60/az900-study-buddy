@@ -6,8 +6,9 @@
     <meta name="theme-color" content="#102c2a" />
     <meta name="description" content="Study Azure fundamentals with clear explanations, Kenyan examples, Kiswahili support, and AZ-900 practice." />
     <title>Study Buddy — AZ-900, made clearer</title>
-    <link rel="stylesheet" href="styles.css?v=2" />
-    <script src="app.js?v=2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=3" />
+    <script src="config.js?v=1" defer></script>
+    <script src="app.js?v=3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to study tools</a>
@@ -104,7 +105,7 @@
         </div>
         <div class="buddy-layout">
           <div class="chat-panel">
-            <div class="chat-topline"><span class="buddy-avatar" aria-hidden="true">✳</span><div><strong>Study Buddy</strong><span>15 reviewed concepts · no live AI</span></div><span class="chat-language" id="chat-language">English</span></div>
+            <div class="chat-topline"><span class="buddy-avatar" aria-hidden="true">✳</span><div><strong>Study Buddy</strong><span id="buddy-capability">Reviewed answers first · AI fallback optional</span></div><span class="chat-language" id="chat-language">English</span></div>
             <p class="level-hint" id="level-hint">Beginner mode · clear definitions, familiar examples, and a quick exam reminder.</p>
             <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions text">
               <div class="chat-welcome"><span class="welcome-spark" aria-hidden="true">✦</span><p>Jambo! I can help make Azure concepts easier to picture. What are you curious about?</p></div>
@@ -119,7 +120,7 @@
               <input id="question-input" name="question" type="text" maxlength="180" placeholder="Ask about an AZ-900 topic…" autocomplete="off" required />
               <button class="send-button" type="submit">Ask Buddy <span aria-hidden="true">↑</span></button>
             </form>
-            <p class="privacy-note"><span aria-hidden="true">ⓘ</span> Answers use reviewed study notes. Your questions stay in this browser.</p>
+            <p class="privacy-note" id="privacy-note"><span aria-hidden="true">ⓘ</span> Reviewed notes answer supported concepts first. If the AI service is configured, unmatched questions are sent to it. AI-generated answers may be wrong; verify them on Microsoft Learn. Don’t enter personal or confidential information.</p>
           </div>
           <aside class="buddy-side">
             <div class="side-card side-card-green">
@@ -192,7 +193,7 @@
 
     <footer class="site-footer page-width">
       <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">✳</span><span>study<span class="brand-accent">buddy</span></span></a>
-      <span>Made with curiosity for Africa’s next generation of cloud builders.</span>
+      <span>Made with curiosity for Kenya’s next generation of cloud builders.</span>
       <a href="https://learn.microsoft.com/credentials/certifications/azure-fundamentals/" target="_blank" rel="noopener noreferrer">Explore Azure Fundamentals ↗</a>
     </footer>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
