@@ -453,6 +453,90 @@ const copy = {
   en: {
     language: "English",
     languageButton: "Switch to Kiswahili",
+    ui: {
+      pageTitle: "Study Buddy — AZ-900, made clearer",
+      description: "Study Azure fundamentals with clear explanations, Kenyan examples, Kiswahili support, and AZ-900 practice.",
+      skipLink: "Skip to study tools",
+      brandLabel: "Study Buddy home",
+      menuOpen: "Open navigation",
+      menuClose: "Close navigation",
+      mainNavigation: "Main navigation",
+      navHome: "Home",
+      navBuddy: "Study Buddy",
+      navTopics: "Study topics",
+      navPractice: "Practice",
+      languageLabel: "Answer language",
+      resetButton: "Reset progress",
+      heroTitle: "Cloud concepts,",
+      heroTitleAccent: "closer to home.",
+      heroIntro: "Make Azure make sense. Learn in plain language, connect ideas to everyday life in Kenya, and practise what the exam can ask.",
+      heroAsk: "Ask Study Buddy",
+      heroQuiz: "Try a quick quiz",
+      featuresLabel: "Study Buddy features",
+      featureBeginner: "Beginner-friendly",
+      featureSwahili: "Kiswahili support",
+      featureProgress: "Progress saved here",
+      learningPlan: "Your learning plan",
+      nextStep: "YOUR NEXT STEP",
+      smallSteps: "Small steps.",
+      cloudConfidence: "Real cloud confidence.",
+      topicsExplored: "Topics explored",
+      chooseTopic: "Choose a topic",
+      domainsLabel: "AZ-900 exam domains",
+      domainCloud: "Cloud concepts",
+      domainArchitecture: "Azure architecture & services",
+      domainGovernance: "Management & governance",
+      examWeight: "% of the exam",
+      domainSource: "Exam skills outline · Microsoft Learn, July 2026",
+      buddyEyebrow: "YOUR FRIENDLY CLOUD COMPANION",
+      buddyTitle: "Ask a question. Get a clearer picture.",
+      buddyLead: "Choose a supported concept. Study Buddy starts with the real definition, then adds a familiar example and an exam reminder.",
+      ready: "READY WHEN YOU ARE",
+      studyLevel: "Study level",
+      levelLabel: "Learning level",
+      suggestionsLabel: "Try asking",
+      suggestCloud: "What is cloud computing?",
+      suggestRegions: "Regions vs. zones",
+      suggestServiceModels: "IaaS, PaaS & SaaS",
+      questionLabel: "Ask about an AZ-900 topic",
+      simpleExplanation: "A SIMPLE EXPLANATION",
+      bigIdeas: "Big ideas,",
+      everydayWords: "everyday words.",
+      jargonCopy: "No jargon wall. Just a friendly starting point and a useful exam reminder.",
+      localContext: "FROM HERE, WITH CONTEXT",
+      familiarExamples: "Examples that feel familiar.",
+      examplesCopy: "Connect cloud concepts to a matatu route, a local shop, or keeping a family photo safe.",
+      outlineEyebrow: "FOLLOW THE OFFICIAL EXAM OUTLINE",
+      topicsTitle: "Build your Azure foundations",
+      topicsLead: "Explore 15 bite-sized topics across all three AZ-900 skill areas.",
+      searchLabel: "Search topics",
+      searchPlaceholder: "Find a concept",
+      filterLabel: "Filter topics by exam domain",
+      filterAll: "All topics",
+      filterCloud: "Cloud concepts",
+      filterArchitecture: "Architecture & services",
+      filterGovernance: "Management & governance",
+      noResults: "No matching concepts. Try another search.",
+      quizEyebrow: "A QUICK CHECK-IN",
+      quizTitle: "Ready to test your understanding?",
+      quizLead: "Try a short practice set. Learn from each answer, whether you get it right or not.",
+      quizLabel: "AZ-900 PRACTICE",
+      revisionEyebrow: "YOUR REVISION PLAN",
+      weakTitle: "Topics to revisit",
+      weakLead: "Based on your quiz answers, saved only in this browser.",
+      reviewPractice: "Review practice",
+      sourceTitle: "Built for learning, grounded in Microsoft Learn.",
+      sourceCopy: "This is an independent, unofficial study aid; its practice questions are original and its examples are memory aids, not exact technical matches. Exam objectives can change; check the",
+      sourceLink: "current AZ-900 study guide",
+      sourceBeforeExam: "before your exam.",
+      footerTagline: "Made with curiosity for Kenya’s next generation of cloud builders.",
+      footerLink: "Explore Azure Fundamentals",
+      filterDomainCloud: "CLOUD CONCEPTS",
+      filterDomainArchitecture: "AZURE ARCHITECTURE",
+      filterDomainGovernance: "MANAGEMENT & GOVERNANCE",
+      questionPrefix: "QUESTION",
+      questionOf: "OF"
+    },
     levels: {
       beginner: "Beginner",
       intermediate: "Intermediate",
@@ -508,6 +592,107 @@ const copy = {
   sw: {
     language: "Kiswahili",
     languageButton: "Switch to English",
+    ui: {
+      pageTitle: "Study Buddy — AZ-900, kwa lugha rahisi",
+      description: "Jifunze misingi ya Azure kwa maelezo rahisi, mifano ya Kenya, Kiswahili na mazoezi ya AZ-900.",
+      skipLink: "Ruka hadi zana za kujifunza",
+      brandLabel: "Ukurasa wa mwanzo wa Study Buddy",
+      menuOpen: "Fungua menyu ya urambazaji",
+      menuClose: "Funga menyu ya urambazaji",
+      mainNavigation: "Menyu kuu",
+      navHome: "Mwanzo",
+      navBuddy: "Study Buddy",
+      navTopics: "Mada za kujifunza",
+      navPractice: "Mazoezi",
+      languageLabel: "Lugha ya majibu",
+      resetButton: "Futa maendeleo",
+      heroTitle: "Dhana za cloud,",
+      heroTitleAccent: "karibu na maisha yako.",
+      heroIntro: "Elewa Azure kwa lugha rahisi. Unganisha dhana na maisha ya kila siku Kenya, kisha fanya mazoezi ya mada zinazoweza kuonekana kwenye mtihani.",
+      heroAsk: "Muulize Study Buddy",
+      heroQuiz: "Jaribu jaribio fupi",
+      featuresLabel: "Vipengele vya Study Buddy",
+      featureBeginner: "Rahisi kwa wanaoanza",
+      featureSwahili: "Maelezo ya Kiswahili",
+      featureProgress: "Maendeleo yanahifadhiwa hapa",
+      learningPlan: "Mpango wako wa kujifunza",
+      nextStep: "HATUA INAYOFUATA",
+      smallSteps: "Hatua ndogo.",
+      cloudConfidence: "Uelewa thabiti wa cloud.",
+      topicsExplored: "Mada ulizojifunza",
+      chooseTopic: "Chagua mada",
+      domainsLabel: "Maeneo ya mtihani wa AZ-900",
+      domainCloud: "Dhana za cloud",
+      domainArchitecture: "Usanifu na huduma za Azure",
+      domainGovernance: "Usimamizi na utawala",
+      examWeight: "% ya mtihani",
+      domainSource: "Muhtasari wa ujuzi wa mtihani · Microsoft Learn, Julai 2026",
+      buddyEyebrow: "MSAIDIZI WAKO WA CLOUD",
+      buddyTitle: "Uliza swali. Elewa vizuri zaidi.",
+      buddyLead: "Chagua dhana inayoungwa mkono. Study Buddy huanza na ufafanuzi sahihi, kisha hutoa mfano unaofahamika na kumbusho la mtihani.",
+      ready: "TUKO TAYARI",
+      studyLevel: "Kiwango cha kujifunza",
+      levelLabel: "Kiwango cha kujifunza",
+      suggestionsLabel: "Jaribu kuuliza",
+      suggestCloud: "Cloud computing ni nini?",
+      suggestRegions: "Tofauti ya regions na zones",
+      suggestServiceModels: "IaaS, PaaS na SaaS",
+      questionLabel: "Uliza kuhusu mada ya AZ-900",
+      simpleExplanation: "MAELEZO RAHISI",
+      bigIdeas: "Dhana kubwa,",
+      everydayWords: "maneno ya kila siku.",
+      jargonCopy: "Bila lugha ngumu: mwanzo rafiki na kumbusho muhimu la mtihani.",
+      localContext: "MIFANO YA MAZOEZI YETU",
+      familiarExamples: "Mifano inayofahamika.",
+      examplesCopy: "Unganisha dhana za cloud na njia ya matatu, duka la karibu, au kuhifadhi picha ya familia.",
+      outlineEyebrow: "FUATA MUHTASARI RASMI WA MTIHANI",
+      topicsTitle: "Jenga msingi wako wa Azure",
+      topicsLead: "Jifunze mada 15 fupi kutoka maeneo yote matatu ya ujuzi wa AZ-900.",
+      searchLabel: "Tafuta mada",
+      searchPlaceholder: "Tafuta dhana",
+      filterLabel: "Chuja mada kulingana na eneo la mtihani",
+      filterAll: "Mada zote",
+      filterCloud: "Dhana za cloud",
+      filterArchitecture: "Usanifu na huduma",
+      filterGovernance: "Usimamizi na utawala",
+      noResults: "Hakuna dhana zinazolingana. Jaribu kutafuta tena.",
+      quizEyebrow: "JARIBO FUPI",
+      quizTitle: "Uko tayari kupima uelewa wako?",
+      quizLead: "Jaribu maswali machache. Utajifunza kutokana na kila jibu, liwe sahihi au la.",
+      quizLabel: "MAZOEZI YA AZ-900",
+      revisionEyebrow: "MPANGO WAKO WA MARUDIO",
+      weakTitle: "Mada za kurudia",
+      weakLead: "Kulingana na majibu yako ya jaribio; huhifadhiwa kwenye kivinjari hiki pekee.",
+      reviewPractice: "Rudia mazoezi",
+      sourceTitle: "Tumejifunza kwa kutumia Microsoft Learn.",
+      sourceCopy: "Hii ni zana huru na isiyo rasmi. Maswali ya mazoezi ni yetu; mifano ni ya kukumbuka tu, si ulinganisho sahihi wa kiufundi. Malengo ya mtihani yanaweza kubadilika; angalia",
+      sourceLink: "mwongozo wa sasa wa AZ-900",
+      sourceBeforeExam: "kabla ya mtihani.",
+      footerTagline: "Imeundwa kwa ari kwa kizazi kijacho cha Kenya cha wajenzi wa cloud.",
+      footerLink: "Jifunze kuhusu Azure Fundamentals",
+      filterDomainCloud: "DHANA ZA CLOUD",
+      filterDomainArchitecture: "USANIFU WA AZURE",
+      filterDomainGovernance: "USIMAMIZI NA UTAWALA",
+      questionPrefix: "SWALI",
+      questionOf: "KATI YA"
+    },
+    topicTitles: {
+      "cloud-computing": "Cloud computing (kompyuta ya wingu)",
+      "cloud-models": "Aina za cloud: public, private na hybrid",
+      "service-types": "IaaS, PaaS na SaaS",
+      "shared-responsibility": "Mgawanyo wa majukumu ya usalama",
+      "cloud-benefits": "Faida za cloud na serverless",
+      "azure-hierarchy": "Rasilimali na viwango vya Azure",
+      "regions-zones": "Azure regions, region pairs na availability zones",
+      compute: "Chaguo za compute za Azure",
+      networking: "Mitandao ya Azure",
+      storage: "Azure Storage (hifadhi ya Azure)",
+      "identity-security": "Utambulisho, ufikiaji na usalama",
+      "cost-management": "Usimamizi wa gharama",
+      "governance-compliance": "Utawala na uzingatiaji",
+      "management-tools": "Kusimamia na kupeleka resources",
+      monitoring: "Ufuatiliaji na hali ya huduma"
+    },
     levels: {
       beginner: "Mwanzo",
       intermediate: "Kati",
@@ -541,7 +726,7 @@ const copy = {
     quickCheck: "Fungua swali la mazoezi linalohusiana",
     wrongOptions: "Kwa nini machaguo mengine si sahihi",
     weakEmpty: "Jibu maswali machache ya mazoezi ili upate orodha yako ya kurudia.",
-    weakSummary: "yamekosewa",
+    weakSummary: "makosa",
     retryTopic: "Rudia mada hii",
     explored: "Umejifunza",
     askAbout: "Uliza Study Buddy",
@@ -553,7 +738,7 @@ const copy = {
     incorrect: "Bado.",
     correctCount: "sahihi",
     answeredNone: "Bado hujajibu swali",
-    answeredSome: "maswali yamejibiwa",
+    answeredSome: "majibu",
     complete: "Maswali yamekamilika!",
     resetDone: "Maendeleo yako ya masomo kwenye kifaa hiki yamefutwa.",
     resetCancel: "Kufuta kumeghairiwa.",
@@ -688,6 +873,40 @@ function currentCopy() {
   return copy[state.language];
 }
 
+function currentUiCopy() {
+  return state.language === "sw" ? copy.sw.ui : copy.en.ui;
+}
+
+function topicTitle(topic) {
+  return state.language === "sw" ? copy.sw.topicTitles[topic.id] : topic.title;
+}
+
+function translateStaticUi() {
+  const text = currentUiCopy();
+  for (const element of document.querySelectorAll("[data-i18n]")) {
+    const translated = text[element.dataset.i18n];
+    if (translated === undefined) continue;
+    const textNode = [...element.childNodes].find(node => node.nodeType === Node.TEXT_NODE);
+    if (textNode) textNode.nodeValue = ` ${translated} `;
+    else element.textContent = translated;
+  }
+  for (const element of document.querySelectorAll("[data-i18n-aria]")) {
+    const translated = text[element.dataset.i18nAria];
+    if (translated !== undefined) element.setAttribute("aria-label", translated);
+  }
+  for (const element of document.querySelectorAll("[data-i18n-placeholder]")) {
+    const translated = text[element.dataset.i18nPlaceholder];
+    if (translated !== undefined) element.setAttribute("placeholder", translated);
+  }
+  document.title = text.pageTitle;
+  document.querySelector('meta[name="description"]').content = text.description;
+  const menuToggle = document.querySelector("#menu-toggle");
+  menuToggle.setAttribute(
+    "aria-label",
+    menuToggle.getAttribute("aria-expanded") === "true" ? text.menuClose : text.menuOpen
+  );
+}
+
 function persistProgress() {
   try {
     localStorage.setItem(storageKey, JSON.stringify({
@@ -764,7 +983,7 @@ function renderWeakTopics() {
     const item = makeElement("article", "weak-topic");
     item.append(makeElement("span", "weak-icon", topic.icon));
     const details = makeElement("div", "weak-copy");
-    details.append(makeElement("strong", "", topic.title));
+    details.append(makeElement("strong", "", topicTitle(topic)));
     details.append(makeElement("span", "", `${record.missed} ${currentCopy().weakSummary} · ${record.attempts} ${currentCopy().answeredSome}`));
     item.append(details);
     const button = makeElement("button", "weak-review", currentCopy().retryTopic);
@@ -779,7 +998,7 @@ function renderTopics() {
   const visibleTopics = topics.filter(topic => {
     const domainMatch = state.filter === "all" || topic.domain === state.filter;
     const query = state.search.trim().toLowerCase();
-    const searchableText = `${topic.title} ${topic.keywords.join(" ")}`.toLowerCase();
+    const searchableText = `${topicTitle(topic)} ${topic.title} ${topic.keywords.join(" ")}`.toLowerCase();
     const searchMatch = !query || query.split(/\s+/).every(word => searchableText.includes(word));
     return domainMatch && searchMatch;
   });
@@ -789,10 +1008,14 @@ function renderTopics() {
     const card = makeElement("article", `topic-card domain-${topic.domain}`);
     const top = makeElement("div", "topic-card-top");
     top.append(makeElement("span", "topic-icon", topic.icon));
-    top.append(makeElement("span", "topic-domain", topic.domain === "cloud" ? "CLOUD CONCEPTS" : topic.domain === "architecture" ? "AZURE ARCHITECTURE" : "MANAGEMENT & GOVERNANCE"));
+    const ui = currentUiCopy();
+    const domainLabel = topic.domain === "cloud"
+      ? ui.filterDomainCloud
+      : topic.domain === "architecture" ? ui.filterDomainArchitecture : ui.filterDomainGovernance;
+    top.append(makeElement("span", "topic-domain", domainLabel));
     if (state.viewed.has(topic.id)) top.append(makeElement("span", "topic-done", "✓"));
     card.append(top);
-    card.append(makeElement("h3", "", topic.title));
+    card.append(makeElement("h3", "", topicTitle(topic)));
     card.append(makeElement("p", "", topicText(topic, "simple")));
     const button = makeElement("button", "topic-link", currentCopy().askAbout);
     button.type = "button";
@@ -815,6 +1038,20 @@ function appendChatMessage(kind, text) {
   return message;
 }
 
+function showReviewedAnswer(topic, question) {
+  state.answerRequestId += 1;
+  state.lastQuestion = question;
+  state.lastAnswer = { type: "topic", topicId: topic.id };
+  state.simpleMode = false;
+  state.simpleModeTopic = null;
+  appendChatMessage("learner-message", question);
+  state.viewed.add(topic.id);
+  renderLastAnswer();
+  updateProgress();
+  renderTopics();
+  persistProgress();
+}
+
 function localizedQuestion(index) {
   const question = questions[index];
   if (state.language === "sheng") return shengQuiz[index].prompt;
@@ -823,7 +1060,7 @@ function localizedQuestion(index) {
 
 function createAnswerBlock(topic) {
   const answer = makeElement("article", "answer-card");
-  answer.append(makeElement("h3", "", `${topic.icon} ${topic.title}`));
+  answer.append(makeElement("h3", "", `${topic.icon} ${topicTitle(topic)}`));
   const levelCopy = currentCopy();
   const definition = topicText(topic, "simple");
   const simpleDefinition = definition.split(/(?<=[.!?])\s+/u, 1)[0];
@@ -891,22 +1128,17 @@ function findTopic(question) {
 function answerQuestion(question) {
   const trimmed = question.trim();
   if (!trimmed) return;
+  const topic = findTopic(trimmed);
+  if (topic) {
+    showReviewedAnswer(topic, trimmed);
+    return;
+  }
   state.lastQuestion = trimmed;
   state.lastAnswer = null;
   const requestId = ++state.answerRequestId;
   state.simpleMode = false;
   state.simpleModeTopic = null;
   appendChatMessage("learner-message", trimmed);
-  const topic = findTopic(trimmed);
-  if (topic) {
-    state.lastAnswer = { type: "topic", topicId: topic.id };
-    state.viewed.add(topic.id);
-    renderLastAnswer();
-    updateProgress();
-    renderTopics();
-    persistProgress();
-    return;
-  }
 
   if (!apiBaseUrl) {
     state.lastAnswer = { type: "not-found" };
@@ -1002,6 +1234,7 @@ function renderLastAnswer() {
 
 function applyLanguage() {
   const text = currentCopy();
+  translateStaticUi();
   document.documentElement.lang = state.language === "en" ? "en" : "sw";
   dom.languageSelect.value = state.language;
   dom.levelSelect.value = state.level;
@@ -1047,9 +1280,17 @@ function renderQuiz() {
   const options = state.language === "sheng"
     ? shengQuiz[state.quizIndex].options
     : state.language === "sw" ? question.optionsSw : question.options;
-  document.querySelector("#question-number").textContent = `${state.language === "sw" ? "SWALI" : "QUESTION"} ${state.quizIndex + 1} ${state.language === "sw" ? "KATI YA" : "OF"} ${questions.length}`;
+  const ui = currentUiCopy();
+  document.querySelector("#question-number").textContent = `${ui.questionPrefix} ${state.quizIndex + 1} ${ui.questionOf} ${questions.length}`;
   progress.style.width = `${((state.quizIndex + 1) / questions.length) * 100}%`;
-  dom.quizContent.replaceChildren(makeElement("p", "quiz-topic", question.topic));
+  const topicLabel = question.topic === "CLOUD CONCEPTS"
+    ? ui.filterDomainCloud
+    : question.topic === "AZURE ARCHITECTURE"
+      ? ui.filterDomainArchitecture
+      : question.topic === "SECURITY & GOVERNANCE" || question.topic === "MANAGEMENT & GOVERNANCE"
+        ? ui.filterDomainGovernance
+        : question.topic;
+  dom.quizContent.replaceChildren(makeElement("p", "quiz-topic", topicLabel));
   dom.quizContent.append(makeElement("h3", "quiz-prompt", prompt));
   const choices = makeElement("div", "quiz-options");
   options.forEach((option, index) => {
@@ -1076,7 +1317,7 @@ function renderQuiz() {
     const detail = quizDetails[state.quizIndex];
     const wrongReasons = wrongOptionReasons[state.language]?.[detail.conceptId] ?? detail.wrong;
     let wrongIndex = 0;
-    question.options.forEach((option, index) => {
+    options.forEach((option, index) => {
       if (index === question.answer) return;
       const item = makeElement("li", "", `${option}: ${wrongReasons[wrongIndex]}`);
       wrongIndex += 1;
@@ -1106,8 +1347,8 @@ function selectAnswer(index) {
 function showTopicInBuddy(topicId) {
   const topic = topics.find(item => item.id === topicId);
   if (!topic) return;
-  const question = state.language === "en" ? `Explain ${topic.title}` : `Nielezee ${topic.title}`;
-  answerQuestion(question);
+  const question = state.language === "en" ? `Explain ${topic.title}` : `Nielezee ${topicTitle(topic)}`;
+  showReviewedAnswer(topic, question);
   document.querySelector("#buddy").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -1226,14 +1467,15 @@ const siteNav = document.querySelector("#site-nav");
 menuToggle.addEventListener("click", () => {
   const expanded = menuToggle.getAttribute("aria-expanded") === "true";
   menuToggle.setAttribute("aria-expanded", String(!expanded));
-  menuToggle.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+  const ui = currentUiCopy();
+  menuToggle.setAttribute("aria-label", expanded ? ui.menuOpen : ui.menuClose);
   siteNav.classList.toggle("is-open", !expanded);
 });
 
 siteNav.addEventListener("click", event => {
   if (event.target.closest("a")) {
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation");
+    menuToggle.setAttribute("aria-label", currentUiCopy().menuOpen);
     siteNav.classList.remove("is-open");
   }
 });

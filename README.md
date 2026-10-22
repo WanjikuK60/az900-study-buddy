@@ -18,6 +18,7 @@ The GitHub Pages frontend is static and works without an account or backend. Rev
 
 - Covers all three AZ-900 skill areas in Microsoft's published study guide.
 - Presents 15 bite-sized concepts with a technical definition first, an explicitly labeled Kenyan everyday analogy, an exam reminder, and a related self-check.
+- Localizes the full interface in English and Kiswahili; topic explanations also offer beta Sheng.
 - Answers supported topic questions from reviewed study notes in English, Kiswahili, or beta Sheng before considering an AI fallback.
 - For unmatched questions, optionally calls a server-side Anthropic-backed FastAPI endpoint; the API key is never shipped to the browser. AI answers are labeled and should be verified on Microsoft Learn.
 - Lets learners choose Beginner, Intermediate, or Exam-ready emphasis and request “Explain like I'm new.”
